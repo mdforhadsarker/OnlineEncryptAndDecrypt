@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Site Title -->
+<title>Online Encryption and Decryption</title>
+
+<!--<meta charset="utf-8">-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Main CSS Stylesheet -->
+<link rel="stylesheet" href="css/main.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Main JavaScript -->
+<script src="js/main.js"></script>
+
+<!-- Crypto Libraries -->
+<script src="mainscript.js"></script>
+<script src="enc-utf8.js"></script>
+<script src="crypto-js.js"></script>
+<script src="aes.js"></script>
+<script src="tripledes.js"></script>
+<script src="rc4.js"></script>
+<script src="rabbit.js"></script>
+<script src="sha1.js"></script>
+<script src="sha3.js"></script>
+<script src="md5.js"></script>
+<script src="Blowfish.js"></script>
+<script src="enc-base64.js"> </script>
+<script type="text/javascript">
+		
+	function doDL(){
+		var s = document.getElementById('chipher').innerHTML;
+		function dataUrl(data) {return "data:x-application/text," + escape(data);}
+		window.open(dataUrl(s));
+	}
+	</script>
+</head>
+
+<body>
+<div style="width:800px; margin:0 auto; " class="container">
+  <h1 align="center" class="heading-alignment">Online Encryption and Decryption</h1>
+  <div class="row">
+    <div class="col-25">
+      <label for="algo">Choose Algorithm</label>
+    </div>
+    <div class="col-75">
+      <select id="method">
+        <option value="def">Select encryption method</option>
+		<option value="aes">Blowfish</option>
+        <option value="aes">AES</option>
+        <option value="des">3DES</option>
+        <option value="rc4">RC4 Stream</option>
+        <option value="rb">Rabbit Stream</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="key">Enter Key</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="key" name="key" placeholder="Enter key ..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="plaintext">Enter Text</label>
+    </div>
+    <div class="col-75">
+      <textarea id="plain" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <button onclick="dec();">Decrypt</button>
+    <button onclick="enc();">Encrypt</button>
+    <button onclick="sha1();">SHA1</button>
+    <button onclick="sha3();">SHA3</button>
+    <button onclick="md();">MD5</button>
+  </div>
+  <div class="row">
+    <div class="col-25"> </div>
+    <div class="col-75">
+      <textarea readonly id="chipher" name="subject" placeholder="Result will appear here.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <button onclick="doDL();">Download</button>
+  </div>
+</div>
+</body>
+</html>
